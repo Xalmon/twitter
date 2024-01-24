@@ -1,0 +1,18 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Nokia.navigation_Phone_book_Search" />
+          <option value="Nokia.navigate_Phone_book_Service" />
+          <option value="Nokia.navigate_Phone_book_AddName" />
+          <option value="Nokia.navigate_Phone_book_Erase" />
+          <option value="Nokia.*" />
+          <option value="int.getdate" />
+          <option value="int.__getitem__" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
