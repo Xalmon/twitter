@@ -7,4 +7,12 @@ from .models import TwitterUser
 
 @admin.register(TwitterUser)
 class UserAdmin(BaseUserAdmin):
-    pass
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("username", "password1", "password2", "first_name", "last_name", "email"),
+            },
+        ),
+    )
