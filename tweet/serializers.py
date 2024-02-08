@@ -3,7 +3,8 @@ from tweet.models import Tweet, Comments
 
 
 class TweetSerializers(serializers.ModelSerializer):
-    tweet = serializers.StringRelatedField()
+    id = serializers.IntegerField(read_only=True)
+    last_update = serializers.DateTimeField(read_only=True)
 
     class Meta:
         model = Tweet
@@ -12,7 +13,8 @@ class TweetSerializers(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
-    commented_on = serializers.DateTimeField(read_only=True)
+    # tweet = serializers.HyperlinkedRelatedField('tweet-detail', queryset=Tweet.objects.all())
+    # tweet = TweetSerializers()
 
     class Meta:
         model = Comments

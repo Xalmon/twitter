@@ -63,6 +63,9 @@ class TweetViewSet(ModelViewSet):
     queryset = Tweet.objects.all()
     serializer_class = TweetSerializers
 
+    def get_queryset(self):
+        return Tweet.objects.filter()
+
 
 class CommentViewSet(ModelViewSet):
     queryset = Comments.objects.select_related('tweet').all()
