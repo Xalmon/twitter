@@ -25,6 +25,8 @@ admin.site.site_header = 'Twitter Admin'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
+    path("auth/", include("djoser.urls")),
+    path("auth/", include("djoser.urls.jwt")),
     path('playground/', include('playground.urls')),
     path("", include("tweet.urls")),
     # path("comments/", include('tweet.urls'))
