@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, RetrieveDestroyAPIView
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from rest_framework.permissions import IsAuthenticated
-from pagination import DefaultPaginationClass
+from .pagination import DefaultPaginationClass
 from rest_framework.response import Response
 from rest_framework import status
 

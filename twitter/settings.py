@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'rest_framework',
     'djoser',
+    'corsheaders',
     'playground',
     'user',
     'tweet',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -131,6 +133,11 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
 AUTH_USER_MODEL = 'user.TwitterUser'
 
 REST_FRAMEWORK = {
@@ -153,3 +160,12 @@ DJOSER = {
         'user_create': 'user.serializer.UserCreateSerializer',
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'localhost'
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_PORT = '2525'
+# DEFALT_FROM_EMAIL = 'complaints@twitter.com'
+
+
